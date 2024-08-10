@@ -1,0 +1,107 @@
+.registerArea {
+    width: 100%;
+    min-height: calc(100vh - 120px);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerFormArea {
+    width: 400px;
+    height: 550px;
+    background-color: var(--dark);
+    border: 3px solid #01FFEA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.registerFormArea h2 {
+    font-size: 1.7rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.registerForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInputGroup {
+    display: flex;
+    flex-direction: column;
+    margin: 8px auto;
+    width: 100%;
+}
+
+.formInputGroup label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.formInputGroup input {
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    color: #fff;
+    background-color: var(--bg-dark);
+    border-radius: 8px;
+}
+
+.inputTypePass{
+    border-radius: 8px 0px 0px 8px !important;
+}
+
+.btn {
+    padding: 8px 12px;
+    width: 100px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.formLink {
+    text-align: center;
+    color: #1f80ff;
+    display: block;
+}
+
+.formLink:hover{
+    color: #1f80ff;
+}
+
+.passInput {
+    display: flex;
+}
+
+.toggleButton{
+    text-align: center;
+    border:  solid #01FFEA;
+    border-radius: 0px 8px 8px 0px;
+    font-size: 1rem;
+    padding: 3px;
+    width: 50px;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}

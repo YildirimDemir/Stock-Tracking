@@ -1,0 +1,297 @@
+.yourItemsArea{
+    padding: 40px 120px;
+}
+
+.yourItemsArea h3{
+    font-size: 1.3rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.tableRow{
+    background-color: var(--dark);
+}
+
+.tableRow:hover{
+    background-color: #272727;
+}
+
+.tableRow .tableHead{
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tableRowItems{
+    height: 100px;
+    background-color: var(--dark);
+    color: #fff;
+}
+
+.tableRowItems:hover{
+    background-color: #2d2d2d;
+}
+
+.itemsPage{
+    width: 100%;
+}
+
+.addItemPage {
+    width: 100%;
+    height: 65vh;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.addItemPage form {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.addItemPage h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.inputGroup {
+    flex: 1 1 calc(50% - 20px); /* İki sütun için 50% genişlik ve boşluk bırak */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.inputGroup label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    height: 55px;
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    background-color: #ffffff;
+    font-size: .85rem;
+    color: #fff;
+    background-color: var(--bg-dark);
+}
+
+.inputGroup input {
+    padding: 10px;
+    height: 55px;
+    width: 250px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+    font-size: .9rem;
+    color: #fff;
+    background-color: var(--bg-dark);
+}
+
+.imgInput{
+    font-size: .7rem !important;
+    padding: 12px 10px !important;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 55px;
+    width: 75px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #00b7a7, #1f80ff);
+    align-self: flex-end;
+    margin-left: 15px;
+}
+
+.imgInput[type='file']{
+    display: none;
+}
+
+.imgLabel{
+    width: 260px !important;
+    border-radius: 8px !important;
+}
+
+
+ @media (max-width: 1024px) and (min-width: 769px) {
+    .yourItemsArea{
+        padding: 40px 80px;
+    }
+    .tableHead{
+       padding: 5px 25px;
+    }
+    .addItemPage {
+        height: 56vh;
+    }
+    
+    .addItemPage form {
+        width: 700px;
+    }
+    .inputGroup label {
+        height: 45px;
+        width: 90px;
+        font-size: .75rem;
+    }
+    
+    .inputGroup input {
+        height: 45px;
+        width: 200px;
+        font-size: .75rem;
+    }
+    .imgLabel{
+        width: 200px !important;
+        border-radius: 8px !important;
+    }
+    .btn{
+        height: 45px;
+        width: 75px;
+    }
+  }
+  
+
+  @media (max-width: 768px) and (min-width: 425px) {
+    .yourItemsArea {
+        padding: 30px 40px;
+    }
+
+    .tableHead {
+        padding: 5px 25px;
+    }
+
+    .addItemPage {
+        height: 60vh;
+    }
+    
+    .addItemPage form {
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .inputGroup {
+        flex: 1 1 calc(50% - 10px); 
+        display: flex;
+        justify-content: center;
+    }
+    
+    .inputGroup label {
+        width: 80px; 
+        font-size: .75rem;
+    }
+    
+    .inputGroup input {
+        width: calc(100% - 80px);
+        font-size: .75rem;
+    }
+    
+    .btn {
+        height: 35px;
+    }
+    .tableHead{
+        padding: 5px 25px;
+    }
+
+    .imgLabel{
+        width: 117px !important;
+        border-radius: 8px !important;
+    }
+    .btn{
+        height: 55px;
+        width: 60px;
+        font-size: .9rem;
+        margin-left: 8px;
+    }
+     
+}
+
+  
+@media (max-width: 425px) {
+    .yourItemsArea {
+        padding: 20px 30px;
+    }
+
+    .tableHead {
+        padding: 5px;
+    }
+
+    .addItemPage {
+        height: auto;
+        padding: 10px 10px; 
+        padding-bottom: 20px;
+    }
+
+    .addItemPage form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    .inputGroup {
+        display: flex;
+        align-items: center; 
+        width: 100%; 
+    }
+
+    .inputGroup label {
+        width: 90px;
+        font-size: .75rem;
+        box-sizing: border-box; 
+    }
+
+    .inputGroup input {
+        width: 200px; 
+        font-size: .75rem;
+        box-sizing: border-box;
+    }
+    .tableHead{
+        padding: 5px 15px;
+    }
+
+    .imgLabel{
+        width: 220px !important;
+        border-radius: 8px !important;
+    }
+    .btn{
+        height: 55px;
+        width: 63px;
+        font-size: .9rem;
+        margin-left: 8px;
+    }
+}
+
+  
+
+  @media (max-width: 767px) {
+
+  }
+  

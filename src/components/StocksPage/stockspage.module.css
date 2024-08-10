@@ -1,0 +1,221 @@
+.stocksPage{
+    width: 100%;
+    /* min-height: calc(100vh - 120px); */
+}
+
+/* .stocksPage h2{
+    font-size: 1.7rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-top: 10px;
+} */
+
+.createNewStock{
+    width: 100%;
+    height: 50vh;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createNewStock form{
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+.createNewStock h3{
+    font-size: 1.2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.inputGroup {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.inputGroup label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    height: 50px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    color: #fff;
+    background-color: var(--bg-dark);
+}
+
+.inputGroup input {
+    padding: 10px;
+    height: 50px;
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-left: none;
+    border-right: none;
+    color: #fff;
+    background-color: var(--bg-dark);
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    height: 50px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 0px 8px 8px 0px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #00b7a7, #1f80ff);
+}
+
+.stockListArea{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.stockListArea h3{
+    font-size: 1.4rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stockList{
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stockList h1{
+    font-size: 1.4rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.stockList .stockBox{
+    width: 250px;
+    height: 150px;
+    background-color: var(--dark);
+    border: 3px solid #01FFEA;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.stockList .stockBox:hover{
+    background-color: #464646;
+    border: 3px solid #01FFEA;
+}
+
+.stockBox h4{
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.stockBox p{
+    color: #fff;
+}
+
+.deleteBtn{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: #c9c9c9;
+    z-index: 3;
+    cursor: pointer;
+}
+
+
+.deleteBtn:hover{
+    color: red;
+}
+
+.noStocksWarning{
+    color: #fff;
+}
+
+  @media (max-width: 768px) and (min-width: 425px) {
+    .inputGroup input {
+        width: 180px;
+    }
+  }
+  
+
+  @media (max-width: 425px) {
+    .createNewStock{
+        height: 40vh;
+    }
+
+    .stockListArea{
+        min-height: 50vh;
+    }
+
+    .inputGroup label {
+        height: 40px;
+        font-size: .9rem;
+    }
+    
+    .inputGroup input {
+        height: 40px;
+        width: 150px;
+        font-size: .9rem;
+    }
+    
+    .btn {
+        height: 40px;
+        font-size: .8;
+        padding: 5px;
+    }
+
+    .stockList .stockBox{
+        width: 240px;
+        height: 130px;
+    }
+
+    .stockBox h4{
+        font-size: 1.2rem;
+    }
+    
+    .stockBox p{
+        font-size: 1rem;
+    }
+  }

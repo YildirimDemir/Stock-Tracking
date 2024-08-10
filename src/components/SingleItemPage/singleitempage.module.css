@@ -1,0 +1,215 @@
+.singleItemPage {
+    width: 100%;
+    height: 85vh;
+    background-color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.singleItemPage form {
+    width: 700px;
+    display: flex;
+    justify-content: space-between; /* İki bölümü yatayda ayırır */
+    gap: 20px;
+    position: relative;
+}
+
+.singleItemPage h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #01FFEA, #1f80ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.imgGroup, .dataGroup {
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Her iki bölümün de yarı genişlikte olmasını sağlar */
+    align-items: center;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.inputGroup label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    height: 55px;
+    width: 100px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+    color: #fff;
+    background-color: var(--bg-dark);
+    font-size: .85rem;
+}
+
+.inputGroup input {
+    padding: 10px;
+    height: 55px;
+    width: 220px;
+    box-sizing: border-box;
+    border: 2px solid #01FFEA;
+    outline: none;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+    font-size: .9rem;
+    color: #fff;
+    background-color: var(--bg-dark);
+}
+
+.imgInput {
+    font-size: .7rem !important;
+    padding: 12px 10px !important;
+}
+
+.btnGroup{
+    position: absolute;
+    display: flex;
+    width: 250px;
+    justify-content: space-around;
+    bottom: -80px;
+    /* left: 230px; */
+    right: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    height: 40px;
+    width: 90px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #00b7a7, #1f80ff);
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.imgGroup img {
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.previusLink{
+    position: absolute;
+    left: 30px;
+    top: 100px;
+    color: #1f80ff;
+}
+
+.imgInput[type='file']{
+    display: none;
+}
+
+.imgLabel{
+    width: 200px !important;
+    border-radius: 8px !important;
+    margin-top: 10px;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .inputGroup input {
+        width: 180px;
+    }
+  }
+  
+
+
+@media (max-width: 768px) and (min-width: 551px) {
+    .inputGroup label {
+        height: 55px;
+        width: 90px;
+        font-size: .75rem;
+    }
+    
+    .inputGroup input {
+        height: 55px;
+        width: 150px;
+        font-size: .8rem;
+    }
+
+    .imgGroup, .dataGroup {
+        width: 300px; 
+    }
+
+    .singleItemPage form {
+        width: 500px;
+    }
+}
+
+@media (max-width: 550px) {
+    .singleItemPage form {
+        width: 100%; 
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    
+    .imgGroup, .dataGroup {
+        width: 100%;
+    }
+
+    .imgGroup img {
+        width: 50%;
+    }
+
+    .inputGroup {
+        margin-top: 10px;
+    }
+
+    .btnGroup {
+        display: flex;
+        justify-content: center; 
+        width: 100%; 
+        margin-top: 20px; 
+        left: auto;
+        right: auto;
+    }
+
+    .btn {
+        margin: 0 10px; 
+    }
+
+    .singleItemPage {
+        min-height: 120vh;
+    }
+
+    .previusLink{
+        position: absolute;
+        left: 15px;
+        top: 90px;
+        color: #1f80ff;
+    }
+}
+
+  
+
+  @media (max-width: 767px) {
+
+  }
+  
