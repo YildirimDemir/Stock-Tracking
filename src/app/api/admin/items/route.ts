@@ -1,4 +1,3 @@
-// /app/api/items/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDB } from '@/helpers/mongodb';
 import Item from '@/models/itemModel';

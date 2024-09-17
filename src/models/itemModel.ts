@@ -9,7 +9,7 @@ export interface IItem extends Document {
     unitPrice?: number;
     wholesalePrice?: number;
     producer?: string;
-    stock: Schema.Types.ObjectId; // Stock ile ilişkili
+    stock: Schema.Types.ObjectId; 
 }
 
 const ItemSchema: Schema = new Schema({
@@ -25,7 +25,6 @@ const ItemSchema: Schema = new Schema({
 });
 
 
-// Modeli kontrol et ve tanımlı değilse tanımla
 const Item = mongoose.models.Item || mongoose.model<IItem>('Item', ItemSchema);
 
 export default Item;

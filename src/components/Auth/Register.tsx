@@ -27,7 +27,6 @@ const Register: React.FC = () => {
         mutationFn: userSignup,
         onSuccess: () => {
             toast.success("User registered successfully");
-            // 3 saniye sonra login sayfasına yönlendirir
             setTimeout(() => {
                 router.replace("/login");
             }, 3000);

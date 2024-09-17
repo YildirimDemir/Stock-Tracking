@@ -9,11 +9,10 @@ import { FaTimes } from 'react-icons/fa';
 export default function StocksPage() {
     const [name, setName] = useState('');
     const [items, setItems] = useState<string[]>([]);
-    const [stocks, setStocks] = useState<any[]>([]); // Stokları saklamak için state
+    const [stocks, setStocks] = useState<any[]>([]); 
     const router = useRouter();
 
     useEffect(() => {
-        // Stokları al ve state'e ata
         async function fetchStocks() {
             try {
                 const data = await getStocks();
@@ -29,9 +28,8 @@ export default function StocksPage() {
     const handleCreateStock = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
-            const user = 'user-id'; // Bu kullanıcı ID'sini oturumdan almanız gerekecek
+            const user = 'user-id';
             await createNewStock({ name, user, items });
-            // Başarılı olursa stokları tekrar yükle
             const data = await getStocks();
             setStocks(data.stocks);
         } catch (error) {
@@ -42,7 +40,6 @@ export default function StocksPage() {
     const handleDeleteStock = async (stockId: string) => {
         try {
             await deleteStock(stockId);
-            // Başarılı olursa stokları tekrar yükle
             const data = await getStocks();
             setStocks(data.stocks);
         } catch (error) {
@@ -51,7 +48,6 @@ export default function StocksPage() {
     };
 
     const handleStockClick = (stockId: string) => {
-        // İlgili stok sayfasına yönlendirme
         router.push(`/stocks/${stockId}/items`);
     };
 

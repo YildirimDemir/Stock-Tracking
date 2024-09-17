@@ -41,10 +41,8 @@ const userSchema = new Schema<IUser>({
 userSchema.pre('findOneAndDelete', async function(next) {
     const userId = this.getQuery()._id;
 
-    // Kullanıcının tüm stoklarını bulun
     const stocks = await Stock.find({ user: userId });
 
-    // Her stok için, stok içindeki itemleri sil ve stokları sil
     for (const stock of stocks) {
         await Item.deleteMany({ stock: stock._id });
         await Stock.deleteOne({ _id: stock._id });

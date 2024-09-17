@@ -28,7 +28,7 @@ export default function Navbar() {
 
     async function logoutHandler() {
         await userLogout();
-        setMenuOpen(false); // Menü kapansın
+        setMenuOpen(false); 
     }
 
     function toggleMenu() {

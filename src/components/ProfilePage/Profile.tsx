@@ -9,7 +9,6 @@ import UserInfo from "./includes/Userinfo";
 import Password from "./includes/Password";
 import DeleteAccount from "./includes/DeleteAccount";
 
-// Kullanıcı tipini tanımlıyoruz
 interface User {
     _id: string;
     username: string;
@@ -29,7 +28,7 @@ export default function Profile() {
             const user = await requestUser(session.user.email);
             return user;
         },
-        initialData: session?.user as User | undefined, // type assertion ekleyin
+        initialData: session?.user as User | undefined,
     });
 
     if (isLoading) {

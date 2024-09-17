@@ -2,7 +2,6 @@ import { getSession } from "next-auth/react";
 
 export async function getStocks() {
     try {
-        // Oturum bilgilerini al
         const session = await getSession();
         if (!session || !session.user || !session.user.email) {
             throw new Error('User not authenticated');
@@ -12,7 +11,7 @@ export async function getStocks() {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${session.user.email}` // veya diğer gerekli oturum bilgileri
+                "Authorization": `Bearer ${session.user.email}` 
             },
         });
 

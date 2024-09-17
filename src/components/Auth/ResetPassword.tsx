@@ -35,7 +35,7 @@ export default function ResetPassword({ token }: ResetPasswordProps) {
     password: string;
     passwordConfirm: string;
   }>({
-    defaultValues: { token }  // Set default value for token
+    defaultValues: { token } 
   });
 
   const submitResetPassword: SubmitHandler<{
@@ -43,7 +43,6 @@ export default function ResetPassword({ token }: ResetPasswordProps) {
     password: string;
     passwordConfirm: string;
   }> = (data) => {
-    // Ensure the token field is included in the submission data
     mutate({
       token: data.token,
       password: data.password,

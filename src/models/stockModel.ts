@@ -30,11 +30,9 @@ stockSchema.pre('findOneAndDelete', async function(next) {
     const stockId = this.getQuery()._id;
     
     try {
-        // Stok ile ilişkili tüm itemleri sil
         await Item.deleteMany({ stock: stockId });
         next();
     } catch (error) {
-        // Hata türünü `CallbackError` olarak belirle
         next(error as mongoose.CallbackError);
     }
 });

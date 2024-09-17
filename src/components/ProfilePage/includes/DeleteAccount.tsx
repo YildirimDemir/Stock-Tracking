@@ -8,16 +8,14 @@ import { deleteUserAccount, requestUser } from '@/services/apiUsers';
 import { toast } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 
-// Kullanıcı tipini tanımlıyoruz
 interface User {
     _id: string;
     username: string;
     email: string;
 }
 
-// Props arayüzünü tanımlıyoruz
 interface DeleteAccountProps {
-    user?: User;  // user prop'u opsiyonel hale getirildi
+    user?: User; 
 }
 
 interface DeleteAccountInputs {
@@ -35,11 +33,11 @@ export default function DeleteAccount({ user }: DeleteAccountProps) {
     const router = useRouter();
     const { register, handleSubmit, formState: { errors }, getValues } = useForm<DeleteAccountInputs>({
         defaultValues: {
-            email: user?.email || '',  // user tanımlı değilse boş string atanır
+            email: user?.email || '', 
         }
     });
 
-    const queryClient = useQueryClient(); // React Query Client
+    const queryClient = useQueryClient();
 
     const mutation = useMutation({
         mutationFn: async (data: DeleteAccountInputs) => {
@@ -50,11 +48,9 @@ export default function DeleteAccount({ user }: DeleteAccountProps) {
                 throw new Error("User information is missing");
             }
 
-            // Kullanıcı bilgilerini al
             const userDetails = await requestUser(user.email);
             console.log("User details before delete:", userDetails);
 
-            // Kullanıcıyı sil
             await deleteUserAccount({
                 userId: user._id,
                 password: data.password,
@@ -64,10 +60,9 @@ export default function DeleteAccount({ user }: DeleteAccountProps) {
         onSuccess: () => {
             toast.success("User account deleted successfully");
 
-            // Clear user data from React Query cache or any other state
-            queryClient.clear(); // React Query cache'i temizle
-            localStorage.clear(); // localStorage'daki verileri temizle
-            sessionStorage.clear(); // sessionStorage'daki verileri temizle
+            queryClient.clear(); 
+            localStorage.clear(); 
+            sessionStorage.clear(); 
             setTimeout(() => {
                 router.replace("/login");
             }, 3000);
@@ -84,7 +79,7 @@ export default function DeleteAccount({ user }: DeleteAccountProps) {
     };
 
     if (!user) {
-        return <div>User not found</div>;  // user tanımlı değilse bir mesaj gösterir
+        return <div>User not found</div>;  
     }
 
     return (
@@ -96,7 +91,7 @@ export default function DeleteAccount({ user }: DeleteAccountProps) {
                     <input 
                         type="email" 
                         id="email"
-                        defaultValue={user?.email || ''}  // user varsa email'i, yoksa boş string
+                        defaultValue={user?.email || ''} 
                         {...register('email', { required: 'This field is required' })}
                     />
                     <p>{errors.email?.message}</p>

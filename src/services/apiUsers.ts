@@ -138,7 +138,6 @@ export async function requestUser(email: string): Promise<any> {
     const session = await getSession();
     
     if (!session || !session.user) {
-        // Oturum yoksa hata fırlat
         throw new Error("Unauthorized: No session found");
     }
 
@@ -176,7 +175,6 @@ export const deleteUserAccount = async (userData: { userId: string, password: st
         throw new Error(errorData.message || 'Something went wrong');
     }
 
-    // Kullanıcı hesabı silindikten sonra oturumu sonlandır
     await signOut({ redirect: false });
 
     return response.json();

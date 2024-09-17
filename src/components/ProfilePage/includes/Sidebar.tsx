@@ -1,7 +1,6 @@
 import Style from "./../profile.module.css";
 import { Dispatch, SetStateAction } from "react";
 
-// Props arayüzünü tanımlıyoruz
 interface SidebarProps {
     setContent: Dispatch<SetStateAction<string>>;
 }

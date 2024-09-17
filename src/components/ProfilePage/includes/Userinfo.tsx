@@ -3,14 +3,12 @@ import { Dispatch, SetStateAction } from "react";
 import Style from "./../profile.module.css";
 import toast from "react-hot-toast";
 
-// Kullanıcı tipini tanımlıyoruz
 interface User {
     _id: string;
     username: string;
     email: string;
 }
 
-// Props arayüzünü tanımlıyoruz
 interface UserInfoProps {
     user: User;
 }

@@ -8,27 +8,22 @@ export async function GET(req: NextRequest) {
     try {
         await connectToDB();
         
-        // Oturum verilerini al
         const session = await getServerSession();
         if (!session || !session.user || !session.user.email) {
             return NextResponse.json({ message: "You are not allowed!" }, { status: 401 });
         }
 
-        // Kullanıcı e-posta adresini al
         const userEmail = session.user.email;
 
-        // Kullanıcıyı bul
         const user = await User.findOne({ email: userEmail }).exec();
         if (!user) {
             return NextResponse.json({ message: "User not found!" }, { status: 404 });
         }
 
-        // Kullanıcının stoklarını almak yerine, tüm stokları döndüren bir sorgu yap
         const stocks = await Stock.find()
             .populate('user', 'username')
             .exec();
 
-        // Başarılı yanıt dön
         return NextResponse.json({ count: stocks.length, stocks }, { status: 200 });
     } catch (error: unknown) {
         if (error instanceof Error) {

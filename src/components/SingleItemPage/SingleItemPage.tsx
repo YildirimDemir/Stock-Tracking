@@ -23,7 +23,6 @@ export default function SingleItemPage() {
   const { stockId: stockIdParam, itemId: itemIdParam } = useParams();
   const router = useRouter();
 
-  // Eğer stockId veya itemId array ise, ilk elemanını kullan
   const stockId = Array.isArray(stockIdParam) ? stockIdParam[0] : stockIdParam;
   const itemId = Array.isArray(itemIdParam) ? itemIdParam[0] : itemIdParam;
 

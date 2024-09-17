@@ -11,11 +11,11 @@ export async function POST(request: NextRequest) {
     }
 
     const arrayBuffer = await file.arrayBuffer();
-    const buffer = new Uint8Array(arrayBuffer); // Uint8Array'e dönüştürme
+    const buffer = new Uint8Array(arrayBuffer); 
 
     const filePath = join(process.cwd(), 'public', 'uploads', file.name);
     await writeFile(filePath, buffer);
 
-    const fileUrl = `/uploads/${file.name}`; // Resmin URL'si
+    const fileUrl = `/uploads/${file.name}`; 
     return NextResponse.json({ success: true, url: fileUrl });
 }
