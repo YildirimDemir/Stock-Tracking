@@ -14,7 +14,7 @@ export async function GET(req: NextRequest, { params }: { params: { stockId: str
 
         await connectToDB();
 
-        const items = await Item.find({ stock: params.stockId }).exec(); // createdBy filtresi kaldırıldı
+        const items = await Item.find({ stock: params.stockId }).exec();
 
         if (!items || items.length === 0) {
             return NextResponse.json({ message: 'Items not found' }, { status: 404 });

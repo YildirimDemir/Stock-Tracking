@@ -12,7 +12,6 @@ export async function GET(req: NextRequest) {
 
         await connectToDB();
 
-        // Tüm itemleri bul
         const items = await Item.find().exec();
 
         if (!items || items.length === 0) {

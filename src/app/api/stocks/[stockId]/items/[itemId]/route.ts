@@ -7,7 +7,7 @@ export async function GET(req: NextRequest, { params }: { params: { itemId: stri
     try {
         await connectToDB();
 
-        // Belirli itemId ile item'ı bul
+  
         const item = await Item.findById(params.itemId).exec();
 
         if (!item) {
@@ -55,14 +55,14 @@ export async function DELETE(req: NextRequest, { params }: { params: { itemId: s
     try {
         await connectToDB();
 
-        // Belirli itemId ile item'ı sil
+  
         const deletedItem = await Item.findByIdAndDelete(params.itemId).exec();
 
         if (!deletedItem) {
             return NextResponse.json({ message: 'Item not found' }, { status: 404 });
         }
 
-        // İlgili stoku bul ve items listesinden bu item'ı çıkar
+    
         const stock = await Stock.findById(deletedItem.stockId).exec();
         if (stock) {
             stock.items = stock.items.filter((item) => item.toString() !== params.itemId);
